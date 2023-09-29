@@ -7,15 +7,12 @@ const currentPageUrl = window.location.href;
 const currentPageName = currentPageUrl
   .split("/")
   .slice(-1)[0]
-  .replace(".html", "")
-  .replace("-", "");
+  .replace(".html", "");
+// .replace("-", "_");
 
 // Check if the currentPageName ends with 's'
-const updatedPageName = currentPageName.endsWith("s")
-  ? currentPageName
-  : `${currentPageName}s`;
 
-const endpoint = `/api/${updatedPageName}?populate=*`;
+const endpoint = `/api/${currentPageName}s?populate=*`;
 
 console.log(endpoint);
 
